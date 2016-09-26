@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="UTF-8">
     <title>Friend Finder</title>
+
     <!-- Latest compiled and minified CSS & JS -->
+    <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="container">
@@ -34,6 +38,7 @@
 
                 <!-- Form Name -->
                 <legend>Friend Finder Survey </legend>
+                    <!--TODO create name form -->
 
 
 
@@ -158,7 +163,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <a href="/survey"><button type="button" class="btn btn-primary btn-lg">Submit </button></a>
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
                     </div>
 
 
@@ -181,3 +186,31 @@
     
 </body>
 </html>
+
+<script type="text/javascript">
+
+    $(".submit").on("click", function(){
+//       console.log("click!");
+
+        var newFriend = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            scores: [$('#question01').val().trim(),
+                $('#question02').val().trim(),
+                $('#question03').val().trim(),
+                $('#question04').val().trim(),
+                $('#question05').val().trim(),
+                $('#question06').val().trim(),
+                $('#question07').val().trim(),
+                $('#question08').val().trim(),
+                $('#question09').val().trim(),
+                $('#question10').val().trim()]
+        }
+
+        var currentURL = window.location.origin;
+
+    });
+
+
+
+</script>
