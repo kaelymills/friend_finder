@@ -5,6 +5,7 @@ var path = require('path'); //includes the path packages to get the correct path
 
 module.exports = function(app){
 // Basic route that sends the user first to the home
+
     app.get('/', function(req, res){
         //loads the main html page
         res.sendFile(path.join(__dirname + '/../public/home.html'));
@@ -15,14 +16,15 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname + '/../public/survey.html'));
     });
 
-    app.get('/new', function(req, res){
-        //loads the results page
-        res.sendFile(path.join(__dirname + '/../public/new.html'));
-    });
-//if no matching route found this defaults
-    app.use(function(req, res){
-        res.sendFile(path.join(__dirname + '/../public/home.html'));
-    });
+    // app.get('/new', function(req, res){
+    //     //loads the results page
+    //     res.sendFile(path.join(__dirname + '/../public/new.html'));
+    // });
+
+// //if no matching route found this defaults
+//     app.use(function(req, res){
+//         res.sendFile(path.join(__dirname + '/../public/home.html'));
+//     });
 
 
 }
