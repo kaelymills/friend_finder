@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        
+     <!--    Header & Jumbotron  -->
+        <div class="jumbotron">
+        <center>
+            <h1> <span class="glyphicon glyphicon-thumbs-up"></span> Friend Finder</h1>
+            <h3> Want more friends? Take our friend survey and find people just as wierd as you! </h3>
+        </center>
+            <hr>
+        </div>  
+    
+        <!-- Survey --> 
+        <div class="row">
+            <div class="col-lg-12">
+
+            <form class="form-horizontal">
+                <fieldset>
+
+                <!-- Form Name -->
+                <legend>Friend Finder Survey </legend>
+
+
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">1. What do you do in your free time? </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">Exercise</option>
+                                <option value="2">Read </option>
+                                <option value="3">Go to the beach</option>
+                                <option value="4">Video Games </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">2. Which food sounds best? </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">Salad</option>
+                                <option value="2">Pizza </option>
+                                <option value="3">Tacos</option>
+                                <option value="4">Steak </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">3. Which drink sounds best? </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">Beer</option>
+                                <option value="2">Whiskey Ginger </option>
+                                <option value="3">Margarita </option>
+                                <option value="4">Reisling  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">4. What would be the vacation of a lifetime? </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">Switzerland</option>
+                                <option value="2">Hawaii </option>
+                                <option value="3">Paris, France </option>
+                                <option value="4">Africa  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">5. Select your favorite Orlando sports team.  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> UCF Football </option>
+                                <option value="2">Orlando Magic </option>
+                                <option value="3">Orlando City Lions </option>
+                                <option value="4">Orlando Predators  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">6. What's your favorite tech brand?  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> Lenovo </option>
+                                <option value="2">Dell </option>
+                                <option value="3">Microsoft </option>
+                                <option value="4">Apple  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">7. Which show is your favorite?  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> Game of Thrones </option>
+                                <option value="2">Big Bang Theory </option>
+                                <option value="3">The Office </option>
+                                <option value="4">Narcos  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">8. If you lived in another state, which would it be?  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> North Carolina </option>
+                                <option value="2">Colarado </option>
+                                <option value="3">California </option>
+                                <option value="4">New York  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">9. What's the best animated movie?  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> Finding Nemo </option>
+                                <option value="2">Up </option>
+                                <option value="3">Frozen </option>
+                                <option value="4">The Incredibles  </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">10. Finish the sentence: "When in doubt,"  </label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1"> Pseudo code it out </option>
+                                <option value="2">console log it out</option>
+                                <option value="3">Stackoverflow </option>
+                                <option value="4">Ask everyone you know  </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+                </form>
+
+            </div>                  
+        </div>
+
+    </div>
+
+
+   
+
+        
+<footer class="footer">
+<center> <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </center>
+</footer>
+    
+</body>
+</html>
