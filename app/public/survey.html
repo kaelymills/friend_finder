@@ -43,7 +43,7 @@
 
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">1. What do you do in your free time? </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question01" name="scores[0]">1. What do you do in your free time? </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1">Exercise</option>
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">2. Which food sounds best? </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question02" name="scores[1]">2. Which food sounds best? </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1">Salad</option>
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">3. Which drink sounds best? </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question03" name="scores[2]">3. Which drink sounds best? </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1">Beer</option>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">4. What would be the vacation of a lifetime? </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question04" name="scores[3]">4. What would be the vacation of a lifetime? </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1">Switzerland</option>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">5. Select your favorite Orlando sports team.  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question05" name="scores[4]">5. Select your favorite Orlando sports team.  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> UCF Football </option>
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">6. What's your favorite tech brand?  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question06" name="scores[5]">6. What's your favorite tech brand?  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> Lenovo </option>
@@ -115,7 +115,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">7. Which show is your favorite?  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question07" name="scores[6]">7. Which show is your favorite?  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> Game of Thrones </option>
@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">8. If you lived in another state, which would it be?  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question08" name="scores[7]">8. If you lived in another state, which would it be?  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> North Carolina </option>
@@ -139,7 +139,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">9. What's the best animated movie?  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question09" name="scores[8]">9. What's the best animated movie?  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> Finding Nemo </option>
@@ -151,7 +151,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectbasic">10. Finish the sentence: "When in doubt,"  </label>
+                        <label class="col-md-4 control-label" for="selectbasic" id="question10" name="scores[9]">10. Finish the sentence: "When in doubt,"  </label>
                         <div class="col-md-4">
                             <select id="selectbasic" name="selectbasic" class="form-control">
                                 <option value="1"> Pseudo code it out </option>
@@ -207,7 +207,20 @@
                 $('#question10').val().trim()]
         }
 
+        console.log(newFriend);
+
         var currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", newFriend, function (data) {
+            $("#bestFriendName").text(data.name);
+            $("#bestFriendImg").attr("src", data.photo);
+
+            $("#bestFriendModal").modal("show");
+
+        });
+
+        return false;
+        })
 
     });
 
