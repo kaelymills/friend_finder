@@ -37,7 +37,8 @@
 
 
                 <!-- Form Name -->
-                <legend>Friend Finder Survey </legend>
+                <h2> Friend Finder Survey </h2>
+                <hr>
 
 
                 <!--<fieldset class="form-group">-->
@@ -208,49 +209,54 @@
 
         
 <footer class="footer">
-<center> <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </center>
+<center> <a href="/api/friends">API Table List </a> | <a href="https://github.com/kaelymills/friend_finder" target="_blank">GitHub Repository </a>
+    </div>
 </footer>
-    
-</body>
-</html>
 
-<script type="text/javascript">
 
-    $(".submit").on("click", function(){
+    <script type="text/javascript">
+
+        $(".submit").on("click", function() {
 //       console.log("click!");
 
-        var newFriend = {
-            name: $('#name').val().trim(),
-            photo: $('#photo').val().trim(),
-            scores: [$('#question01').val().trim(),
-                $('#question02').val().trim(),
-                $('#question03').val().trim(),
-                $('#question04').val().trim(),
-                $('#question05').val().trim(),
-                $('#question06').val().trim(),
-                $('#question07').val().trim(),
-                $('#question08').val().trim(),
-                $('#question09').val().trim(),
-                $('#question10').val().trim()]
-        }
+            var newFriend = {
+                name: $('#name').val().trim(),
+                photo: $('#photo').val().trim(),
+                scores: [$('#question01').val().trim(),
+                    $('#question02').val().trim(),
+                    $('#question03').val().trim(),
+                    $('#question04').val().trim(),
+                    $('#question05').val().trim(),
+                    $('#question06').val().trim(),
+                    $('#question07').val().trim(),
+                    $('#question08').val().trim(),
+                    $('#question09').val().trim(),
+                    $('#question10').val().trim()]
+            }
 
-        console.log(newFriend);
+            console.log(newFriend);
 
-        var currentURL = window.location.origin;
+            var currentURL = window.location.origin;
 
-        $.post(currentURL + "/api/friends", newFriend, function (data) {
-            $("#bestFriendName").text(data.name);
-            $("#bestFriendImg").attr("src", data.photo);
+            $.post(currentURL + "/api/friends", newFriend, function (data) {
+                $("#newFriendName").text(data.name);
+                $("#newFriendImg").attr("src", data.photo);
 
-            $("#bestFriendModal").modal("show");
+                $("#bestFriendModal").modal("show");
+
+            });
+
+            return false;
+        })
 
         });
 
-        return false;
-        })
-
-    });
 
 
+    </script>
 
-</script>
+
+
+</body>
+</html>
+
