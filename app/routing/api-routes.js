@@ -6,12 +6,17 @@ var friendData = require('../data/friends.js');
 module.exports = function(app){
 
 //loads page of API data where all of the members are listed
+//     app.get('/api/friends', function(req, res){
+//         res.json(friendData);
+//     });
+
     app.get('/api/friends', function(req, res){
         res.json(friendData);
     });
 
 
     app.post('/api/friends', function(req, res){
+
         var newFriend = req.body;
 
         for(var i = 0; i < newFriend.scores.length; i++) {
@@ -44,13 +49,15 @@ module.exports = function(app){
 
         for(var i = 1; i < differencesArray.length; i++) {
             if(differencesArray[i] < bestFriendNum) {
-                bestFriendNum = differencesArray[i];
+                bestFriendNum = differencesArray[i];2
                 bestFriendIndex = i;
             }
         }
 
-        friendData.push(newFriend);
+
+
+        friendData.push(req.body);
 
         res.json(friendData[bestFriendIndex]);
-    })
+    });
 };
